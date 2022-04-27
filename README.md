@@ -8,7 +8,7 @@ cd  CMSSW_10_6_26_prod/src
 cmsenv
 git cms-init
 git cms-rebase-topic DryRun:CMSSW_10_6_19_patch_pfnano
-git clone git@github.com:DAZSLE/PFNano PhysicsTools/PFNano
+git clone git@github.com:jeffkrupa/PFNano PhysicsTools/PFNano
 cd PhysicsTools/PFNano
 git checkout tags/v2.2 -b v2.2
 cd $CMSSW_BASE/src
