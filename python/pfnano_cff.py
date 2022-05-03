@@ -5,13 +5,13 @@ from PhysicsTools.NanoAOD.common_cff import Var
 
 
 def PFnano_customizeMC(process):
-    addPFCands(process, runOnMC=True, addAK4=True, addAK8=True)
+    addPFCands(process, runOnMC=True, saveAll=True, addAK4=False, addAK8=False)
     add_BTV(process, runOnMC=True)
     process.NANOAODSIMoutput.fakeNameForCrab = cms.untracked.bool(True)  # needed for crab publication
     return process
 
 def PFnano_customizeMC_allPF(process):
-    addPFCands(process, runOnMC=True, saveAll=True, addAK4=True, addAK8=True) # All PFCands, and tables for AK4 and AK8
+    addPFCands(process, runOnMC=True, saveAll=True, addAK4=False, addAK8=False) # All PFCands, and tables for AK4 and AK8
     add_BTV(process, runOnMC=True)
     process.NANOAODSIMoutput.fakeNameForCrab = cms.untracked.bool(True)  # needed for crab publication
     return process
@@ -36,7 +36,7 @@ def PFnano_customizeMC_noInputs(process):
 
 #### DATA customization
 def PFnano_customizeData(process):
-    addPFCands(process, runOnMC=False, addAK4=True, addAK8=True)
+    addPFCands(process, runOnMC=False, saveAll=True, addAK4=True, addAK8=False)
     add_BTV(process, runOnMC=False)
     process.NANOAODSIMoutput.fakeNameForCrab = cms.untracked.bool(True)  # needed for crab publication
     return process

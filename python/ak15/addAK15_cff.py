@@ -326,7 +326,7 @@ def setupPFNanoAK15_data(process):
 
 def setupPFNanoAK15_mc(process):
     setupAK15(process, runOnMC=True, runParticleNet=False, runParticleNetMD=True)
-    addPFCands(process, runOnMC=False, saveAll=False, addAK4=False, addAK8=True, addAK15=True, saveAllGen=False) # runOnMC=False because we don't need GenCands associated to GenJets
+    addPFCands(process, runOnMC=False, saveAll=True, addAK4=False, addAK8=False, addAK15=False, saveAllGen=False) # runOnMC=False because we don't need GenCands associated to GenJets
     add_BTV(process, runOnMC=True, addAK4=True, addAK8=True, addAK15=True)
     process.NANOAODSIMoutput.fakeNameForCrab = cms.untracked.bool(True)  # needed for crab publication
     return process
