@@ -91,11 +91,14 @@ if __name__ == '__main__':
                 this_config.Site.storageSite = output_site
 
                 this_config.section_('Data')
-                this_config.Data.publication = False
+                this_config.Data.publication = True
                 this_config.Data.outLFNDirBase = "{}/{}/{}".format(output_lfn_base, info["year"], sample)
                 this_config.Data.outputDatasetTag = dataset_shortname
                 # Outputs land at outLFNDirBase/outputDatasetTag
                 this_config.Data.inputDBS = 'global'
+                if "private" in info.keys():
+                    if info["private"]:
+                        this_config.Data.inputDBS = 'phys03'
                 this_config.Data.inputDataset = dataset
                 splitting_mode = info.get("splitting", "Automatic")
                 if not splitting_mode in ["Automatic", "FileBased", "LumiBased"]:
